@@ -1,0 +1,53 @@
+.list-paragraph{
+    text-align: left;
+    
+}
+ol{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    line-height: 1.5em;
+}
+body{
+    background-color: pink;
+    max-width: 450px;
+    margin: auto;
+    padding: 10px;
+}
+h1{
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1:hover{
+    color: black;
+}
+h3{
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+h4{
+    color: white;
+    text-align: center;
+    font-family: serif;
+    font-size: 90%;
+    font-weight: lighter;
+}
+#white-text{
+    color: white;
+    font-size: medium;
+}
+p{
+    text-align: center;
+}
+.quote{
+    color: white;
+    font-size: 3em;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
