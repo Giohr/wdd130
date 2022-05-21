@@ -1,0 +1,15 @@
+#image-with-circles{
+    width: 100%;
+    margin: 0 auto;
+}
+#end-div{
+    width:100%;
+    background-color:grey;
+    margin: 0 auto;
+}
+.rounded-images{
+    display: inline;
+    border-radius: 50%;
+    border: 25px solid rgb(96, 95, 95);
+    margin: 175px;
+}
