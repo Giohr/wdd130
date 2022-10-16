@@ -17,10 +17,10 @@
 
 /*font-family*/
 #hero-msg, h2{
-    font-family: 'Dongle Regular 400', sans-serif;
+    font-family: 'Dongle Regular 400', Verdana, sans-serif;
 }
 .msg{
-    font-family: 'Dongle Regular 300', sans-serif;
+    font-family: 'Dongle Regular 300', Verdana,sans-serif;
 }
 nav, footer{
     font-family: 'Times New Roman', Times, serif;
@@ -51,7 +51,7 @@ header{
     background-color: black;
 }
 .logo{
-    width: 80%;
+    width: 80;px
 }
 #logo_link{
     padding-top: 5px;
