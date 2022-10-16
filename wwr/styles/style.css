@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
 
 /*Body-div id content*/
-.content{
+#content{
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -51,7 +51,7 @@ header{
     background-color: black;
 }
 .logo{
-    width: 100px;
+    width: 80%;
 }
 #logo_link{
     padding-top: 5px;
