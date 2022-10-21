@@ -10,7 +10,7 @@
 
 /*Titles*/
 .home-title{
-    color: black;
+    color: #86d672;
     font-size: 2em;
     margin-top: 10px;
 }
@@ -27,6 +27,28 @@ nav, footer{
 }
 
 /*hero box*/ /*missing*/
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: -100px; 
+
+}
+#hero-img { 
+    width: 100%; 
+}
+#hero-box {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    z-index: -1;
+}
+#hero-msg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 100px;
+}
+#hero-msg h4 {
+    color: white;
+}
 main section{
     background-color: white;
 }
@@ -44,22 +66,50 @@ body{
 }
 .card-img {
     border: 10px solid #d9c2a3;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+}
+.card-img:hover {
+    opacity: .6;
+    transform: scale(1.1);
+}
+.home-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.rivers-card{
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+.camping-card{
+    grid-column: 5/7;
+    grid-row: 2/3;
+}
+.rapids-card{
+    grid-column: 8/10;
+    grid-row: 2/3;
 }
 
 /*Header logo and stuff*/
 header{
     background-color: black;
+    display: grid;
+    grid-template-columns: 150px auto;
 }
 .logo{
-    width: 80;px
+    width: 80px;
 }
 #logo_link{
     padding-top: 5px;
+    justify-self: center;
+    align-self: center;
 }   
 
 /*Nav & links*/
 nav{
     background-color: black;
+    display: flex;
+    justify-content: space-around;
 }
 nav a{
     color: white; 
@@ -72,17 +122,27 @@ nav a:hover {
 
 /*.Book Now link*/
 .book{
-    color:black;
+    color:white;
+    background-color: #A8ED96;
     /*color: white; */
 }
 .book:hover{
-    background-color: #A8ED96;
+    color: white;
+    background-color: black;
 }
 
 /*Mountains div*/
+.mountains{
+
+    grid-column: 2/7;
+    grid-row: 5/8;
+    box-shadow: 5px 5px 10px #6f7364;
+}
 #background {
     height: 725px;
     background-color: #47B193;
+    grid-column: 1/11;
+    grid-row: 4/9;
 }
 
 /*msg div section*/
@@ -92,6 +152,9 @@ nav a:hover {
     font-size: .8em;
     line-height: 1.5em;
     padding: 35px;
+    grid-column: 6/10;
+    grid-row: 6/7;
+    box-shadow: 5px 5px 10px #6f7364;
 }
 .msg h2{
     color: black;
@@ -104,26 +167,36 @@ nav a:hover {
 /*.Join link*/
 .join{
     color: white;
+    background-color: #A8ED96;
 }
 .join:hover{
-    background-color: #A8ED96;
+    background-color: black;
 }
 
 /*Footer*/
 footer{
+    color: white;
     background-color: black;
     padding: 25px 50px;
+    margin-top: 200px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 footer a{
     color: white;
     margin-top: 200px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    text-decoration: none;
 }
 footer a:hover{
+    border-radius: 5px;
     background-color: #A8ED96;
 }
-footer p a:hover {
+/*footer p a:hover {
     text-decoration: underline;
-}
+}*/
 footer .social img{
     padding-top: 15px;
 }  
@@ -144,6 +217,9 @@ nav a, .book, .join, footer a{
     margin-top: 50px;
     border-radius: 5px;
 }
+.card-img, .mountains {
+    width: 100%;
+}
 /*Reset*/
 body {
     background-color: #fcfbfb;
@@ -154,4 +230,57 @@ body {
 }
 h2 {
     margin: 0;
+}
+
+
+/*Media query*/
+/*
+This could be read as follows: "If the max width of the screen gets smaller than 900px, then use this CSS instead of what you may have seen above" for these selectors.
+
+This CSS will not go into effect unless the screen is less than 900px;
+
+Some grids were turned off with display: block, and the flex-boxes were changed from rows to columns. The rest is all minor adjustments to make it look good on the smaller screen.
+
+You may notice display: none was used on a few selectors to make them disappear. Those elements weren't necessary, and not having them on a smaller screen makes it look less cluttered.
+*/
+@media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+    nav, footer {
+        flex-direction: column;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    #hero-msg {
+        margin-top: 0;
+    }
+    #hero-msg h4 {
+        display: none;
+    }
+    .home-title {
+        font-size: 25px;
+        color: #000000;
+    }
+    .rivers-card, .camping-card, .rapids-card { 
+        margin: 50px auto;
+        width: 60%;
+    }
+    #background {
+        display: none;
+    }
+    .mountains, .msg {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    footer {
+        margin-top: 25px;
+    }
 }
