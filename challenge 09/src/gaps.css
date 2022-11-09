@@ -1,0 +1,246 @@
+/*----------------------------------------
+Mixins and Variables
+----------------------------------------*/
+
+$rebel: #ff093c;
+$empire: #ff093c;
+
+$red: #ff093c;
+$blue: #21bbeb;
+$purple: #af4ba4;
+$green: #1dc887;
+
+$border: solid 1px #dfdfdf;
+
+@mixin lightsaber($color) {
+  background-color: lighten($color, 20%);
+  border: solid 3px $color;
+  border-radius: 5px;
+}
+
+/*----------------------------------------
+Base Styles
+----------------------------------------*/
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #444;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 0px;
+}
+
+  // @media (min-width: 992px) {
+  //   width: 970px;
+  // }
+  // @media (min-width: 1200px) {
+  //   width: 1170px;
+  // }
+
+/*----------------------------------------
+Grid Layout
+----------------------------------------*/
+
+
+//Base mobile one-column layout
+.container {
+  width: 750px;
+}
+.service-item {
+  border-top: $border;
+  &:first-child {
+    border-top: none;
+  }
+}
+
+
+
+
+.service-item {
+  padding: 3rem;
+  text-align: center;
+  border-top: 1px solid #dfdfdf;
+  &:first-child {
+    border-top: none;
+  }
+}
+
+// @media (min-width: 768px) {
+//   .service-grid {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//     grid-gap: 0px;
+//   }
+//   .service-item {
+//     border-top: 1px solid #dfdfdf;
+//     border-left: 1px solid #dfdfdf;
+//     &:nth-child(-n + 2) {
+//       border-top: none;
+//     }
+//     &:nth-child(odd) {
+//       border-left: none;
+//     }
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .service-item {
+//     border-top: 1px solid #dfdfdf;
+//     border-left: 1px solid #dfdfdf;
+//     &:nth-child(-n + 2) {
+//       border-top: 1px solid #dfdfdf;
+//     }
+//     &:nth-child(odd) {
+//       border-left: 1px solid #dfdfdf;
+//     }
+//     &:nth-child(-n + 3) {
+//       border-top: none;
+//     }
+//     &:first-child,
+//     &:nth-child(3n + 1) {
+//       border-left: none;
+//     }
+    
+    
+// Two-column layout
+@media (min-width: 768px) {
+  .container {
+    width: 970px;
+  }
+  .service-item {
+    border-top: $border;
+    &:nth-child(even) {
+      border-left: $border
+    }
+    &:first-child,
+    &:nth-child(2) {
+      border-top: none;
+    }
+  }
+}
+
+//Three-column layout
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  .service-item {
+    border-top: 1px solid #dfdfdf;
+    &:nth-child(even) {
+      border-left: 1px solid #dfdfdf;
+    }
+    &:first-child,
+    &:nth-child(2) {
+      border-top: none;
+    }
+  }
+}
+
+
+
+
+
+
+.service-item {
+  padding: 3rem;
+  text-align: center;
+  // border-top: 1px solid #dfdfdf;
+  // &:first-child {
+  //   border-top: none;
+  // }
+}
+
+@media (min-width: 768px) {
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px, 1fr));
+    grid-gap: 0px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .service-item {
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    &:nth-child(-n + 2) {
+      border-top: 1px solid #dfdfdf;
+    }
+    &:nth-child(odd) {
+      border-left: 1px solid #dfdfdf;
+    }
+    &:nth-child(-n + 3) {
+      border-top: none;
+    }
+    &:first-child,
+    &:nth-child(3n + 1) {
+      border-left: none;
+    }
+  }
+}
+
+/*----------------------------------------
+Styles
+----------------------------------------*/
+
+.section-title {
+  text-align: center;
+  font-weight: 100;
+  font-size: 150%;
+  &:after {
+    margin: 12px auto 24px;
+    width: 250px;
+    height: 5px;
+    background-color: #333;
+    display: block;
+    content: "";
+  }
+}
+
+.fab {
+  font-size: 44px;
+  line-height: 70px;
+}
+
+h3 {
+  font-size: 19px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  &:after {
+    margin: 12px auto 0;
+    width: 125px;
+    height: 5px;
+    background-color: #333;
+    display: block;
+    content: "";
+  }
+}
+
+h3.red:after {
+  @include lightsaber($red);
+}
+h3.green:after {
+  @include lightsaber($green);
+}
+h3.purple:after {
+  @include lightsaber($purple);
+}
+h3.blue:after {
+  @include lightsaber($blue);
+}
