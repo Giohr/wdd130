@@ -1,8 +1,10 @@
 * {
   margin: 0;
-  padding: 0;
 }
-
+/*Body*/
+body{
+  background-color: black;
+}
 /*HEADER*/
 header{
     padding: 1em;
@@ -72,51 +74,51 @@ footer a{
 }
 
 /*GRID QUOTES PICTURES*/
-.container {
+.grid-quote-container {
     position: relative;
     width: 100%;
     max-width: 400px;
-  }
+}
   
-  .image {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    backface-visibility: hidden;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    opacity: 0;
-    transition: .3s ease;
-    overflow: hidden;
-  }
-  
-  .container:hover .overlay {
-    width: 100%;
-    opacity: 1;
-  }
-  
-  .overimage {
-    width: 100%;
-    max-width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    white-space: nowrap;
-  }
-  .grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+.image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  backface-visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  overflow: hidden;
+}
+
+.grid-quote-container:hover .overlay {
+  width: 100%;
+  opacity: 1;
+}
+
+.overimage {
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 /*Calendars section flexbox*/
 .bigger-calendar-container{
@@ -151,7 +153,11 @@ footer a{
     margin: 10px;
     font-size: small;
 }
-
+#google-calendar{
+  display: inline-block;
+  max-width: 100%;
+  align-items: center;
+}
 /*Welcome to the quotes section*/
 #an {
     overflow: hidden;
@@ -221,6 +227,17 @@ footer a{
     height: auto;
     }
 
+/*Div before quote scroll bar*/
+#div-h1{
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#h1-home-quotes{
+  color: white;
+  text-align: center;
+}
 /*Quote scroll bar*/
 .home-big-container{
     background-color: black;
@@ -265,14 +282,53 @@ footer a{
     content: "";
   }
 /*Home Comment Section*/
-.comment-section{
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    align-self: center;
-    padding: 30px;
+.container {
+	max-width: 640px;
+	margin: 30px auto;
+	background: whitesmoke;
+	border-radius: 8px;
+	padding: 20px;
 }
-/**/
+.comment {
+    display: block;
+    transition: all 1s;
+}
+.commentClicked {
+    min-height: 0px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px 10px
+}
+.container textarea {
+    width: 100%;
+    border: none;
+    background: white;
+    padding: 5px 10px;
+    height: 50%;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #F15156;
+    transition: all 0.5s;
+    margin-top: 15px;
+}
+button.primaryContained {
+    background: #FFC07F;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    margin-top: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+    transition: 1s all;
+    font-size: 10px;
+    border-radius: 5px;
+}
+button.primaryContained:hover {
+    background: #db420a;
+}
+
+
 
 
 
