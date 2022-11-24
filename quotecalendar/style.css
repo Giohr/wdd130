@@ -234,7 +234,7 @@ footer a{
     }
 
 /*Div before quote scroll bar*/
-#div-h1{
+#div-quote-scroll-bar{
   min-height: 100px;
   display: block;
   margin: 40px;
@@ -264,7 +264,7 @@ footer a{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-#div-h1 button a{
+#div-quote-scroll-bar button a{
   text-decoration: none;
 }
 /*Quote scroll bar*/
@@ -310,6 +310,29 @@ footer a{
     display: block;
     content: "";
   }
+/*Div comment section*/
+#div-comment-home{
+  min-height: 100px;
+  display: block;
+  margin: 20px;
+  border: white 2px solid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#h1-comment-home{
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-size: 3em;
+}
+#h2-comment-home{
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
 /*Home Comment Section*/
 .container {
 	max-width: 640px;
