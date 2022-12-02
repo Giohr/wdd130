@@ -310,11 +310,12 @@ footer a{
     display: block;
     content: "";
   }
+
 /*Div comment section*/
 #div-comment-home{
   min-height: 100px;
   display: block;
-  margin: 20px;
+  margin: 35px;
   border: white 2px solid;
   justify-content: center;
   align-items: center;

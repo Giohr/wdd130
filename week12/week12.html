@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document for practice</title>
+    <style>
+        /*IMAGE HOVER OVERLAY SECTION*/
+        .container1 {
+          position: relative;
+          width: 50%;
+        }
+
+        .image {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: #bb160a;
+        }
+
+        .container1:hover .overlay {
+          opacity: 1;
+        }
+
+        .text {
+          color: white;
+          font-size: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+
+        /*IMAGE GALLERY SECTION*/
+        * {
+          box-sizing: border-box;
+        }
+
+        .gallery {
+          margin: 0;
+          font-family: Arial;
+        }
+
+        /* The grid: Four equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+        }
+
+        /* Style the images inside the grid */
+        .column img {
+          opacity: 0.8; 
+          cursor: pointer;
+          height: 200px; /*this was me*/
+        }
+
+        .column img:hover {
+          opacity: 1;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* The expanding image container */
+        .container2 {
+          position: relative;
+          display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+          font-size: 20px;
+        }
+
+        /* Closable button inside the expanded image */
+        .closebtn {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          color: white;
+          font-size: 35px;
+          cursor: pointer;
+        }
+
+        /*MODAL IMAGE SECTION*/
+        .modal-image{font-family: Arial, Helvetica, sans-serif;}
+
+        #myImg {
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        #myImg:hover {opacity: 0.7;}
+
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+          text-align: center;
+          color: #ccc;
+          padding: 10px 0;
+          height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content, #caption {  
+          -webkit-animation-name: zoom;
+          -webkit-animation-duration: 0.6s;
+          animation-name: zoom;
+          animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+          from {-webkit-transform:scale(0)} 
+          to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+          from {transform:scale(0)} 
+          to {transform:scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+          .modal-content {
+            width: 100%;
+          }
+        } 
+
+    </style>
+</head>
+<body>
+    <header>
+        <div><h1>Welcome to the practice</h1></div>
+        <ul>
+          <li><a href="week12a.html">Page 1: nav bars and buttons</a></li>
+          <li><a href="week12.html">Page 2: images</a></li>
+      </ul>
+    </header>
+    <div>----------------------------------------------------------------------</div>
+    <section>
+      <div style="text-align:center">
+        <h2>Image with hover</h2>
+      </div>
+      <div class="container1">
+        <img src="src\pexels-guillaume-meurice-1591447.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">Hi!</div>
+        </div>
+      </div>
+    </section>
+    <div>----------------------------------------------------------------------</div>
+    <section class="gallery">
+      <div style="text-align:center">
+        <h2>Tabbed Image Gallery</h2>
+      </div>
+      
+      <!-- The four columns -->
+      <div class="row">
+        <div class="column">
+          <img src="src\pexels-dana-tentis-370799.jpg" alt="Not Nature" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="src\pexels-felix-mittermeier-956999.jpg" alt="Not Snow" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="src\pexels-magda-ehlers-960137.jpg" alt="Not Mountains" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="src\pexels-pixabay-531880.jpg" alt="Not Lights" style="width:100%" onclick="myFunction(this);">
+        </div>
+      </div>
+      
+      <div class="container2">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+      </div>
+      
+      <script>
+      function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+      }
+      </script>
+    </section>
+    <div>----------------------------------------------------------------------</div>
+    <div style="text-align:center">
+      <h2>Modal Image</h2>
+    </div>
+    <section class="modal-image">
+      <img id="myImg" src="src\pexels-rovenimagescom-949587.jpg" alt="Not Snow" style="width:100%;max-width:300px">
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+
+      <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() { 
+        modal.style.display = "none";
+      }
+      </script>
+    </section>
+    <div>----------------------------------------------------------------------</div>
+
+    <footer></footer>
+
+</body>
+</html>
