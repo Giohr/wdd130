@@ -5,10 +5,10 @@ Fonts are separated by a | */
 @import url('https://fonts.google.com/specimen/Oswald?query=oswald');
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #721121   ;
-  --secondary-color: #A5402D ;
+  --primary-color: #FFC07F   ;
+  --secondary-color: black ;
   --accent1-color: #F15156;
-  --accent2-color: #FFC07F;
+  --accent2-color: white;
 
   /* change the values below to your chosen font(s) */
   --heading-font: "Oswald", "Oswald Regulat 500", sans-serif;
@@ -19,7 +19,7 @@ Fonts are separated by a | */
   --headline-color-on-color: white; /* headlines on a colored background */ 
   --paragraph-color-on-white: black; /* paragraph text on a white background */ 
   --paragraph-color-on-color: white; /* paragraph text on a colored background */ 
-  --paragraph-background-color: #A5402D  ;
+  --paragraph-background-color: black ;
   --nav-link-color: black;
   --nav-background-color: #FFC07F;
   --nav-hover-link-color: #F15156;

@@ -149,20 +149,41 @@ footer a{
 }
 
 /*This month's calendar alignment*/
-.todays-month{
-    background-color: white;
-    border: #F15156 solid 20px;
-    padding: 50px;
-    text-align: center;
+.calendar-text{
+  min-height: 100px;
+  display: block;
+  margin: 40px;
+  border: white 2px solid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.htwos{
-    margin: 10px;
-    font-size: small;
+.calendar-text h1{
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  font-size: 3em;
+}
+.calendar-text button{
+  margin: 0 auto;
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.calendar-text button a{
+  text-decoration: none;
+}
+.calendar-text button:hover {
+  background-color: #F15156;
 }
 #google-calendar{
-  display: inline-block;
-  max-width: 100%;
-  align-items: center;
+  margin: 60px auto;
+  width: 85%;  
+  text-align: center;
+  display: block;
 }
 /*Welcome to the quotes section*/
 #an {
@@ -234,7 +255,7 @@ footer a{
     }
 
 /*Div before quote scroll bar*/
-#div-quote-scroll-bar{
+.div-quote-scroll-bar{
   min-height: 100px;
   display: block;
   margin: 40px;
@@ -243,20 +264,20 @@ footer a{
   align-items: center;
   position: relative;
 }
-#h1-home-quotes{
+.div-quote-scroll-bar h1{
   color: white;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 5px;
   font-size: 3em;
 }
-#h2-home-quotes{
+.div-quote-scroll-bar h2{
   color: white;
   text-align: center;
   font-size: 1.2em;
   padding-bottom: 50px;
 }
-#button-home-quotes{
+.div-quote-scroll-bar button{
   margin: 0;
   position: absolute;
   top: 82%;
@@ -264,8 +285,11 @@ footer a{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-#div-quote-scroll-bar button a{
+.div-quote-scroll-bar button a{
   text-decoration: none;
+}
+.div-quote-scroll-bar button:hover{
+  background-color: #F15156;
 }
 /*Quote scroll bar*/
 .home-big-container{
@@ -392,8 +416,72 @@ button.primaryContained:hover {
   color:#eee;
   margin: 20px;
 }
+/*FIRST CALENDAR SECTION*/
+#firstCalendar-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.grid-text-background{
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+.calendar-grid-text button{
+  margin: 10px auto;
+  display: block;
+  background-color: whitesmoke;
+  color: black;
+}
+.calendar-grid-text button a{
+  text-decoration: none;
+}
+.calendar-grid-text button:hover {
+  background-color: #F15156;
+}
 
 
+.cc-container {
+  position: relative;
+  width: 50%;
+}
+
+.cc-image {
+  display: block;
+  width: 100%;
+  height: 50%;
+}
+
+.cc-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.cc-container:hover .cc-overlay {
+  width: 100%;
+  left: 0;
+}
+
+.cc-text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
 
 
 
